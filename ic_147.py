@@ -107,7 +107,6 @@ def main():
   while True:
     m = menu()
     if m == 1:
-      print("1おしたよ")
       fare=select_station()
       if fare != 0:
         balance=pay(balance,fare)
@@ -117,9 +116,11 @@ def main():
       print("システムを終了します")
       break
 
+
   
     
  
 
 if __name__ == "__main__":
     main() 
+print("戻り値:", select_station()) 
