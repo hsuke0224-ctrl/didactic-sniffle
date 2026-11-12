@@ -105,13 +105,25 @@ def charge(balance): #引数はbalaneにした　英語の　残高
 def main():
   #ここに処理の中身を書く。()カッコ内の引数はある場合は書く。
   pass #このpassは処理を書いた後消してよい。
-  m = menu()
-  if m == 1:
-    print("まだ実装できてない")
-  elif m ==2:
-    charge(500)    
-  print(m)
+  balance=500
+  while True:
+    m = menu()
+    if m == 1:
+      print("1おしたよ")
+      fare=select_station()
+      if fare != 0:
+        balance=pay(balance,fare)
+    
+    
+    elif m ==2:
+      charge(500)    
+      print(m)
+    elif m ==99:
+      print("システムを終了します")
+      break
+
   
+    
  
 
 if __name__ == "__main__":
