@@ -16,8 +16,30 @@ def menu():
   
 
 def select_station():
-  #ここに処理の中身を書く。()カッコ内の引数はある場合は書く。
-  pass #このpassは処理を書いた後消してよい。
+  stations=["秋葉原駅","山梨駅","長野駅"]
+  fares=[133,4128,7990]
+  i=len(stations)
+  print("【乗車駅選択】")
+  for x in range(i):
+    print(x,":",stations[x],"から",fares[x],"円")
+  destination = int(input("乗車した駅を入力してください(キャンセルする場合には 99 を入力)"))
+
+  n=destination-1
+  while True:
+    if destination==1:
+      print("乗車駅は",stations[n],"で運賃は ",fares[n]," 円です。")
+      return fares[n]
+    elif destination==2:
+      print("乗車駅は",stations[n],"で運賃は",fares[n],"円です。")
+      return fares[n]
+    elif destination==3:
+      print("乗車駅は",stations[n],"で運賃は",fares[n],"円です")
+      return fares[n]
+    elif destination==99:
+      print("駅の選択をキャンセルしました。")
+      return 0
+    else:
+      print("数字を入力してください。")
 
 
 def pay():
