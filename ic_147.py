@@ -29,22 +29,26 @@ def select_station():
   for x in range(i):
     print(x+1,":",stations[x],"から",fares[x],"円")
   while True:  
-    destination = int(input("乗車した駅を入力してください(キャンセルする場合には 99 を入力)"))
-    n=destination-1
-    if destination==1:
-      print("乗車駅は",stations[n],"で運賃は ",fares[n]," 円です。")
-      return fares[n]
-    elif destination==2:
-      print("乗車駅は",stations[n],"で運賃は",fares[n],"円です。")
-      return fares[n]
-    elif destination==3:
-      print("乗車駅は",stations[n],"で運賃は",fares[n],"円です")
-      return fares[n]
-    elif destination==99:
-      print("駅の選択をキャンセルしました。")
-      return 0
+    try:
+      destination = int(input("乗車した駅を入力してください(キャンセルする場合には 99 を入力)"))
+      n=destination-1
+    except ValueError: #1.5とかabcdとか入力されたときに
+          print("正しい数値を入力してください。")
     else:
-      print("数字を入力してください。")
+      if destination==1:
+        print("乗車駅は",stations[n],"で運賃は ",fares[n]," 円です。")
+        return fares[n]
+      elif destination==2:
+        print("乗車駅は",stations[n],"で運賃は",fares[n],"円です。")
+        return fares[n]
+      elif destination==3:
+        print("乗車駅は",stations[n],"で運賃は",fares[n],"円です")
+        return fares[n]
+      elif destination==99:
+        print("駅の選択をキャンセルしました。")
+        return 0
+      else:
+        print("数字を入力してください。")
 
 
 def pay(balance,fare):
