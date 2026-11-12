@@ -48,8 +48,26 @@ def select_station():
       print("数字を入力してください。")
 
 
-def pay():
-  print(f"チャージ残高は{charge()}円です。")
+def pay(balance):
+  fare=select_station()
+  print(f"チャージ残高は{balance}円です。")
+  if balance < fare:
+    print("残高不足です")
+    while True:
+      if balance < fare:
+        print("3000円自動でチャージします")
+        balance=balance + 3000
+      else:
+        break
+
+  balance = balance - fare
+  print(f"清算後のチャージ残高は{balance}円です。")
+  if balance < 500:
+    balance = balance + 3000
+    print("チャージ残高が500円未満なので3000円自動でチャージします")
+  return balance
+
+  #ここに処理の中身を書く。()カッコ内の引数はある場合は書く。
   pass #このpassは処理を書いた後消してよい。
 
 
@@ -65,19 +83,19 @@ def charge(balance): #引数はbalaneにした　英語の　残高
 
   while True:
     try:
-      a = int(input("チャージする金額を選択してください。（キャンセルする場合には99を入力"))
+      n = int(input("チャージする金額を選択してください。（キャンセルする場合には99を入力"))
     except ValueError: #1.5とかabcdとか入力されたときに
       print("正しい数値を入力してください。")
     else: #エラー起きなかったら
-      if 1<= a <= len(charges) or a==99:
+      if 1<= n <= len(charges) or n==99:
         break
       else:
         print("正しい数値を入力してください。")
 
-  if  1<= a <= len(charges):
-    print(f"{charges[a-1]}円チャージします") #nが１のとき　1000でcharges[0]の値だから　a-1するとちょうど
-    balance=balance+charges[a-1]#残高についかしておく
-  elif a==99:
+  if  1<= n <= len(charges):
+    print(f"{charges[n-1]}円チャージします") #nが１のとき　1000でcharges[0]の値だから　n-1するとちょうど
+    balance=balance+charges[n-1]#残高についかしておく
+  elif n==99:
     print("チャージをキャンセルしました。")  
   print(f"チャージ残高は{balance}円です。")
   return balance
@@ -102,8 +120,6 @@ def main():
   
   C=charge(500)
   print(C)
-
-  
   
 
 if __name__ == "__main__":
