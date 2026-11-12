@@ -48,8 +48,7 @@ def select_station():
       print("数字を入力してください。")
 
 
-def pay(balance):
-  fare=select_station()
+def pay(balance,fare):
   print(f"チャージ残高は{balance}円です。")
   if balance < fare:
     print("残高不足です")
