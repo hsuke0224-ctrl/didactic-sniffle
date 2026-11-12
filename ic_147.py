@@ -28,10 +28,9 @@ def select_station():
   print("【乗車駅選択】")
   for x in range(i):
     print(x+1,":",stations[x],"から",fares[x],"円")
-  destination = int(input("乗車した駅を入力してください(キャンセルする場合には 99 を入力)"))
-
-  n=destination-1
-  while True:
+  while True:  
+    destination = int(input("乗車した駅を入力してください(キャンセルする場合には 99 を入力)"))
+    n=destination-1
     if destination==1:
       print("乗車駅は",stations[n],"で運賃は ",fares[n]," 円です。")
       return fares[n]
