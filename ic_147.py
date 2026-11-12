@@ -94,6 +94,10 @@ def main():
   #ここに処理の中身を書く。()カッコ内の引数はある場合は書く。
   pass #このpassは処理を書いた後消してよい。
   m = menu()
+  if m == 1:
+    print("まだ実装できてない")
+  elif m ==2:
+    charge(500)    
   print(m)
   
   C=charge(500)
