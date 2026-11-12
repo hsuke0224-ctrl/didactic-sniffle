@@ -100,11 +100,6 @@ def charge(balance): #引数はbalaneにした　英語の　残高
   return balance
   
   
-  
-
-
-
-  pass #このpassは処理を書いた後消してよい。
 
 
 def main():
@@ -117,9 +112,7 @@ def main():
     charge(500)    
   print(m)
   
-  C=charge(500)
-  print(C)
-  
+ 
 
 if __name__ == "__main__":
     main() 
