@@ -27,7 +27,7 @@ def select_station():
   i=len(stations)
   print("【乗車駅選択】")
   for x in range(i):
-    print(x,":",stations[x],"から",fares[x],"円")
+    print(x+1,":",stations[x],"から",fares[x],"円")
   destination = int(input("乗車した駅を入力してください(キャンセルする場合には 99 を入力)"))
 
   n=destination-1
@@ -66,9 +66,6 @@ def pay(balance,fare):
     print("チャージ残高が500円未満なので3000円自動でチャージします")
   return balance
 
-  #ここに処理の中身を書く。()カッコ内の引数はある場合は書く。
-  pass #このpassは処理を書いた後消してよい。
-
 
 def charge(balance): #引数はbalaneにした　英語の　残高
   charges=[] 
@@ -103,8 +100,6 @@ def charge(balance): #引数はbalaneにした　英語の　残高
 
 
 def main():
-  #ここに処理の中身を書く。()カッコ内の引数はある場合は書く。
-  pass #このpassは処理を書いた後消してよい。
   balance=500
   while True:
     m = menu()
