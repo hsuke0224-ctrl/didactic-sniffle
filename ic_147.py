@@ -123,4 +123,3 @@ def main():
 
 if __name__ == "__main__":
     main() 
-print("戻り値:", select_station()) 
