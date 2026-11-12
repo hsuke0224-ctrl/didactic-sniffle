@@ -108,11 +108,8 @@ def main():
       fare=select_station()
       if fare != 0:
         balance=pay(balance,fare)
-    
-    
     elif m ==2:
-      charge(500)    
-      print(m)
+      balance=charge(balance)    
     elif m ==99:
       print("システムを終了します")
       break
